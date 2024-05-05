@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+	<title>Barcode Scanner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="html5-qrcode.min.js"></script>
+</head>
+<body>
+	<h1>Barcode Scanner</h1>
+
+
+	<div style="width: 300px; height: 300px; border: 1px solid #ccc" id="obj_CamScanner"></div>
+
+	
+	<div style="margin-top: 30px; margin-bottom: 30px;">
+		<input id="txt_input" style="width: 250px; font-size:2em;"><button id="btn_ok" style="width: 90px; font-size:2em;">Ok</button>
+	</div>
+
+	<hr>
+	[<a href="index.html">home</a>]
+</body>
+<script type="module">
+
+	import * as mainprog from './jscam-barcodescanner.mjs'
+	window.$mainprog = mainprog 
+
+	window.addEventListener('load', async (evt)=>{
+		await window.$mainprog.init();
+	})
+
+</script>	
+</html>
